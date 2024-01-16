@@ -131,24 +131,28 @@ int winCheckDiag(char diagCheck[MAXSIZE][MAXSIZE]) {
     int winCheckD = 0;
     
     if(diagCheck[0][0] == diagCheck[1][1]) {
-        if(diagCheck[0][0] == diagCheck[MAXSIZE][MAXSIZE]) {
+        if(diagCheck[0][0] == diagCheck[MAXSIZE - 1][MAXSIZE - 1]) {
             winCheckD = 1;
         }
-    } else if(diagCheck[0][0] == diagCheck[MAXSIZE][MAXSIZE]) {
+    } else if(diagCheck[0][0] == diagCheck[MAXSIZE - 1][MAXSIZE - 1]) {
         if(diagCheck[0][0] == diagCheck[1][1]) {
             winCheckD = 1;
         }
     }
     
-    if(diagCheck[0][MAXSIZE] == diagCheck[1][1]) {
-        if(diagCheck[0][MAXSIZE] == diagCheck[MAXSIZE][MAXSIZE]) {
+    if(diagCheck[0][MAXSIZE - 1] == diagCheck[1][1]) {
+        if(diagCheck[0][MAXSIZE - 1] == diagCheck[MAXSIZE - 1][MAXSIZE - 1]) {
             winCheckD = 1;
         }
-    } else if(diagCheck[0][MAXSIZE] == diagCheck[MAXSIZE][MAXSIZE]) {
-        if(diagCheck[0][MAXSIZE] == diagCheck[1][1]) {
+    } else if(diagCheck[0][MAXSIZE - 1] == diagCheck[MAXSIZE - 1][MAXSIZE - 1]) {
+        if(diagCheck[0][MAXSIZE - 1] == diagCheck[1][1]) {
             winCheckD = 1;
         }
     }
     
-    return winCheckD;
+    if(winCheckD == 1) {
+        return 1;
+    } else {
+        return 0;
+    }
 }
